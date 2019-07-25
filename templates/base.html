@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Haraj | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <div id="navbar">
+        <h1>Haraj</h1>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'home' %}">Add</a></li>
+            <li><a href="{% url 'home' %}">Register</a></li>
+            <li><a href="{% url 'home' %}">Login</a></li>
+            <li><a href="{% url 'home' %}">Logout</a></li>
+        </ul>
+    </div>
+
+
+    {% block body %}
+    {% endblock %}
+
+    <div id="footer">
+        <p>All copy rights 2019&copy; are reserved </p>
+    </div>
+</body>
+
+</html>
