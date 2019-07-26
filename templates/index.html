@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+<div class="boxes_container">
+    {% for i in items %}
+    <div class="box">
+        <img src="{{i.picture.url}}" alt="Item Picture">
+        <h1><a href="#">{{i.name}}</a></h1>
+        <br>
+        <div class="sub_box">
+            <h2>{{i.price}}$</h2>
+        </div>
+    </div>
+    {% empty %}
+    <p>No items are found</p>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
