@@ -95,7 +95,7 @@ body {
     border-radius: 10px;
     padding: 5px;
     margin: 5px;
-    width: 410px;
+    width: 650px;
 }
 
 .box img {
@@ -103,7 +103,8 @@ body {
     width: 150px;
     margin: 5px;
 }
-.box a{
+
+.box a {
     text-decoration: none;
     color: #0473C0;
 }
@@ -112,12 +113,12 @@ body {
     float: left;
     font-size: 1.25rem;
     margin-left: 5px;
-    white-space:nowrap; 
+    white-space: nowrap;
     text-overflow: ellipsis;
     width: 150px;
 }
 
-.box .sub_box{
+.box .sub_box {
     position: relative;
     top: 80px;
     right: 40px;
@@ -129,6 +130,79 @@ body {
     float: right;
 }
 
+/* detail */
+
+.detail_container {
+    margin: 0 auto;
+    width: 80%;
+    overflow: hidden;
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.item_img {
+    float: left;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.detail_box {
+    margin: 5px;
+    padding: 10px;
+}
+
+.main_detail h1 {
+    background-color: rgb(20, 142, 230);
+    color: white;
+    padding: 5px;
+}
+
+.detail_box p {
+    width: 700px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.main_container {
+    float: right;
+}
+
+.sub_detail h3 {
+    margin: 5px;
+    color: rgb(20, 142, 230);
+}
+
+
+.candp {
+    margin: 10px;
+    padding: 15px;
+    border: 1px dashed #0473C0;
+    overflow: hidden;
+}
+
+.candp h3 {
+    float: left;
+    color: #0473C0;
+}
+
+.candp i {
+    margin-right: 3px;
+    color: #0473C0;
+}
+
+.candp h2 {
+    float: right;
+    color: red;
+}
+
+.item_footer .dates {
+    float: left;
+}
+
+.item_footer .sub_detail {
+    float: right;
+}
 
 /* footer */
 
@@ -139,6 +213,8 @@ body {
     width: 100%;
     padding: 15px;
     margin-top: 40px;
+    position: absolute;
+    bottom: 0;
 }
 
 .errorlist {
@@ -146,6 +222,12 @@ body {
     color: lightslategray;
     font-style: italic;
 }
-.clr{
+
+.clr {
     clear: both;
+}
+
+.detail_box h4 {
+    color: lightslategray;
+    margin: 5px;
 }

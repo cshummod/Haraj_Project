@@ -123,5 +123,6 @@ USE_TZ = True
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+LOGIN_URL = '/login'
 
 STATIC_URL = '/static/'

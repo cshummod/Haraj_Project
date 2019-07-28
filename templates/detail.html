@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Item Detail
+{% endblock %}
+
+{% block body %}
+
+<div class="detail_container">
+    <img src="{{item.picture.url}}" alt="Item picture" class="item_img">
+    <div class="main_container">
+        <div class="main_detail">
+            <h1>{{item.name}}</h1>
+
+        </div>
+        <div class="clr"></div>
+        <div class="detail_box">
+            <p>{{item.description}}</p>
+
+            <div class="candp">
+                <h3><i class="fa fa-phone-square" aria-hidden="true"></i>0{{item.mobile}}</h3>
+                <h2>{{item.price}}$</h2>
+            </div>
+            <div class="item_footer">
+                <div class="dates">
+                    <h4>Added on: {{item.added_on}}</h4>
+                    <h4>Last update: {{item.updated_on}}</h4>
+                </div>
+                <div class="sub_detail">
+                    <h3><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        {{item.location}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

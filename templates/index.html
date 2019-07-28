@@ -8,7 +8,7 @@ Home
     {% for i in items %}
     <div class="box">
         <img src="{{i.picture.url}}" alt="Item Picture">
-        <h1><a href="#">{{i.name}}</a></h1>
+        <h1><a href="{% url 'detail' i.id %}">{{i.name}}</a></h1>
         <br>
         <div class="sub_box">
             <h2>{{i.price}}$</h2>

@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Haraj | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -16,16 +17,20 @@
         <ul>
             <li><a href="{% url 'home' %}" class="current">Home</a></li>
             <li><a href="{% url 'add_item' %}">Add Item</a></li>
-            <li><a href="{% url 'home' %}">Register</a></li>
-            <li><a href="{% url 'home' %}">Login</a></li>
-            <li><a href="{% url 'home' %}">Logout</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </div>
 
 
     {% block body %}
     {% endblock %}
-    
+
     <div class="clr"></div>
 
     <div id="footer">
