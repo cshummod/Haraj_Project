@@ -2,11 +2,10 @@
 
 
 {% block title %}
-Add Item
+Add/Update Item
 {% endblock %}
 
 {% block body %}
-{% if user.is_authenticated %}
 
 <div class="container">
 
@@ -23,17 +22,10 @@ Add Item
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="Add Item" class="btn">
+        <input type="submit" value="Submit" class="btn">
     </form>
 
 </div>
 
-{% else %}
-<div class="login">
-    <i class="fa fa-lock" aria-hidden="true"></i>
-    <p>You can't add item unless you <a href="{% url 'login' %}">login</a></p>
-    <p>Don't have an account? <a href="{% url 'register' %}">Register Here</a></p>
-</div>
 
-{% endif %}
 {% endblock %}\

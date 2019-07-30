@@ -187,7 +187,7 @@ body {
 }
 
 .candp i {
-    margin-right: 3px;
+    margin-right: 12px;
     color: #0473C0;
 }
 
@@ -230,4 +230,31 @@ body {
 .detail_box h4 {
     color: lightslategray;
     margin: 5px;
+}
+
+.login{
+    background-color: #0473C0;
+    color: white;
+    font-size: 2rem;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 40px;
+    width: 700px;
+    text-align: center;
+}
+.login i{
+    font-size: 12rem;
+    padding: 20px;
+}
+.login p{
+    margin: 10px;
+}
+.login a{
+    background-color: white;
+    color: #0473C0;
+    text-decoration: none;
+}
+.login a:hover{
+    background-color: antiquewhite;
+    color: #0473C0;
 }

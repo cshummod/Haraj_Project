@@ -6,6 +6,7 @@ Home
 {% block body %}
 <div class="boxes_container">
     {% for i in items %}
+    {% if i.is_accepted %}
     <div class="box">
         <img src="{{i.picture.url}}" alt="Item Picture">
         <h1><a href="{% url 'detail' i.id %}">{{i.name}}</a></h1>
@@ -14,6 +15,7 @@ Home
             <h2>{{i.price}}$</h2>
         </div>
     </div>
+    {% endif %}
     {% empty %}
     <p>No items are found</p>
     {% endfor %}

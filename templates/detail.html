@@ -25,11 +25,16 @@ Item Detail
                 <div class="dates">
                     <h4>Added on: {{item.added_on}}</h4>
                     <h4>Last update: {{item.updated_on}}</h4>
+                    {% if user.is_authenticated%}
+                    <a href="{% url 'delete-item' item.id %}">Delete Item</a>
+                    <a href="{% url 'update-item' item.id %}">Update Item</a>
+                    {% endif %}
                 </div>
                 <div class="sub_detail">
                     <h3><i class="fa fa-map-marker" aria-hidden="true"></i>
                         {{item.location}}</h3>
                 </div>
+
             </div>
         </div>
     </div>
