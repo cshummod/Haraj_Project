@@ -1,20 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+
 class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
-    mobile = models.CharField(max_length = 10)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    mobile = models.CharField(max_length=10)
 
     genders = (
-        ('M','Male'),
-        ('F','Female')
+        ('M', 'Male'),
+        ('F', 'Female')
     )
 
-    gender = models.CharField(max_length = 1, choices = genders)
+    gender = models.CharField(max_length=1, choices=genders)
 
     def __str__(self):
         return self.user.username
-
 
 
 class Item(models.Model):
@@ -38,6 +39,7 @@ class Item(models.Model):
     mobile = models.IntegerField(max_length=10)
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    is_accepted = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

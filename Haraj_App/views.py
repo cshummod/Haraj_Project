@@ -1,12 +1,48 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .forms import ItemForm, UserForm, ProfileForm, LoginForm
 from .models import Item
 from django.contrib import messages
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from django.shortcuts import render
+from rest_framework import viewsets
+from .serializers import ItemSerializer
+
+
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
+
+
+class ItemCreate(CreateView):
+    model = Item
+    fields = '__all__'
+    template_name = 'item_form.html'
+
+
+class ItemUpdate(UpdateView):
+    model = Item
+    fields = '__all__'
+    template_name = 'item_form.html'
+
+
+class ItemDelete(DeleteView):
+    model = Item
+    success_url = reverse_lazy('home')
+    template_name = 'item_confirm_delete.html'
+
+
+def delete_item(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    if item:
+        item.delete()
+    return HttpResponseRedirect(reverse('home'))
+
 
 @login_required
 def user_logout(request):
@@ -14,7 +50,7 @@ def user_logout(request):
     return HttpResponseRedirect(reverse('home'))
 
 
-def login(request):
+def user_login(request):
     form = LoginForm()
     if request.method == 'POST':
         form = LoginForm(request.POST)
